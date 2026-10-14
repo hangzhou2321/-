@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "manisoftrl"
+version = "0.7.0"
+description = "Gymnasium environments and regression gates for soft-continuum manipulation RL"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+keywords = ["gymnasium", "robotics", "reinforcement-learning", "soft-robotics"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "gymnasium>=0.29,<2",
+  "numpy>=1.24",
+  "Pillow>=10",
+]
+
+[project.scripts]
+manisoftrl-promotion = "manisoftrl.promotion:main"
+
+[project.optional-dependencies]
+baseline = ["stable-baselines3>=2.6"]
+rigid-aerial = ["mujoco>=3.2,<4"]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+manisoftrl = ["assets/**/*.xml"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]

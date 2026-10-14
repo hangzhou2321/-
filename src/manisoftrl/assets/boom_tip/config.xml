@@ -1,0 +1,28 @@
+<mujoco model="manisoftrl_boom_tip">
+  <compiler angle="radian" autolimits="true"/>
+  <default>
+    <geom condim="3" friction="1.5 0.05 0.02" solref="0.003 1" solimp="0.95 0.995 0.001"/>
+  </default>
+  <worldbody>
+    <body name="boom_tip_body" pos="0 0 0" quat="1 0 0 0">
+      <joint name="flying_hand_free" type="free" damping="8"/>
+      <inertial pos="0 0 0.04" mass="0.18" diaginertia="0.0008 0.0008 0.0002"/>
+      <geom name="boom_nozzle_housing" type="cylinder" pos="0 0 0.05" size="0.020 0.05" rgba="0.45 0.48 0.52 1"/>
+      <body name="telescopic_nozzle" pos="0 0 0">
+        <joint name="boom_extension_joint" type="slide" axis="0 0 1" range="0 0.22" damping="20"/>
+        <geom name="boom_nozzle" type="cylinder" pos="0 0 -0.05" size="0.015 0.17" mass="0.12" rgba="0.78 0.80 0.84 1"/>
+        <site name="boom_nozzle_tip" pos="0 0 0.12" size="0.001" rgba="0 0 0 0"/>
+        <camera name="boom_tip_camera" pos="0 0 0.08" xyaxes="1 0 0 0 -1 0" fovy="70"/>
+      </body>
+    </body>
+  </worldbody>
+  <actuator>
+    <motor name="fx" joint="flying_hand_free" gear="10 0 0 0 0 0" ctrlrange="-500 500"/>
+    <motor name="fy" joint="flying_hand_free" gear="0 10 0 0 0 0" ctrlrange="-500 500"/>
+    <motor name="fz" joint="flying_hand_free" gear="0 0 10 0 0 0" ctrlrange="-500 500"/>
+    <motor name="mx" joint="flying_hand_free" gear="0 0 0 10 0 0" ctrlrange="-10 10"/>
+    <motor name="my" joint="flying_hand_free" gear="0 0 0 0 10 0" ctrlrange="-10 10"/>
+    <motor name="mz" joint="flying_hand_free" gear="0 0 0 0 0 10" ctrlrange="-10 10"/>
+    <general name="fingers_actuator" joint="boom_extension_joint" ctrlrange="0 0.22" forcerange="-200 200" gainprm="400 0 0" biasprm="0 -400 -40"/>
+  </actuator>
+</mujoco>

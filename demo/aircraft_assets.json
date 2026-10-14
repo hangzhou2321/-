@@ -1,0 +1,89 @@
+{
+  "acquired_on": "2026-08-07",
+  "acquisition": "direct_remote_https_without_proxy",
+  "assets_are_vendored": false,
+  "additional_receivers": [
+    {
+      "archive_bytes": 9838104,
+      "archive_sha256": "367ba0c86dcc805f1e5e7abad3ce49962e75e4e33070acfda37e033179c0925b",
+      "archive_url": "https://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2024/A-10.zip",
+      "body_texture_max": [
+        1024,
+        1024
+      ],
+      "license": "GPL-2.0",
+      "license_evidence": "A-10/COPYING inside archive",
+      "main_model": {
+        "format": "AC3D",
+        "path": "A-10/Models/A10-004-015l3.ac",
+        "surfaces": 32985,
+        "vertices": 30313
+      },
+      "name": "FlightGear Fairchild A-10",
+      "refuel_geometry": "A-10/Models/A-10-fuel-aar.ac",
+      "role": "alternate_receiver_visual_context",
+      "source_page": "https://wiki.flightgear.org/Fairchild_A-10"
+    }
+  ],
+  "available_not_acquired": [
+    {
+      "archive_url": "https://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2024/F-15.zip",
+      "name": "FlightGear F-15",
+      "role": "alternate_boom_receiver"
+    },
+    {
+      "archive_url": "https://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2024/DC-10.zip",
+      "name": "FlightGear KC-10A in DC-10 package",
+      "role": "alternate_boom_tanker",
+      "source_page": "https://wiki.flightgear.org/DC-10"
+    }
+  ],
+  "receiver": {
+    "archive_bytes": 534118989,
+    "archive_sha256": "6911d6ed92f6ed2dd5dd68068cbfc17e3581b36033925f617d5a5b19033fb052",
+    "archive_url": "https://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2024/f16.zip",
+    "body_texture": {
+      "path": "f16/Models/f16.png",
+      "shape": [
+        2048,
+        2048,
+        4
+      ]
+    },
+    "license": "GPL-2.0-or-later",
+    "license_evidence": "f16/LICENSE and f16/copyright.txt inside archive",
+    "main_model": {
+      "format": "AC3D",
+      "path": "f16/Models/f16.ac",
+      "surfaces": 15834,
+      "vertices": 10627
+    },
+    "name": "FlightGear F-16",
+    "refuel_anchor_aircraft_frame_m": [
+      0.1054,
+      0.0,
+      0.65
+    ],
+    "refuel_type": "boom",
+    "role": "close_receiver_context",
+    "source_page": "https://wiki.flightgear.org/F16"
+  },
+  "schema_version": 2,
+  "tanker": {
+    "archive_bytes": 2965480,
+    "archive_sha256": "5584ba0a9fdda86fb289688339202a0dee0dae4c61e40b4463608bdb788bee12",
+    "archive_url": "https://mirrors.ibiblio.org/flightgear/ftp/Aircraft-2024/KC135.zip",
+    "license": "GPL-2.0-or-later",
+    "license_evidence": "official FlightGear aircraft page",
+    "main_model": {
+      "format": "AC3D",
+      "path": "KC135/Models/KC135.ac",
+      "surfaces": 3865,
+      "vertices": 4237
+    },
+    "name": "FlightGear Boeing KC-135E",
+    "refuel_type": "boom",
+    "role": "wide_context_only",
+    "source_page": "https://wiki.flightgear.org/Boeing_KC-135E"
+  }
+}
