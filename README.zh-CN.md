@@ -21,7 +21,7 @@
 使用 Python 3.11 或 3.12：
 
 ```bash
-git clone https://github.com/hangzhou2321/manisoftrl.git
+git clone https://github.com/hangzhou2321/-.git manisoftrl
 cd manisoftrl
 python -m venv .venv
 ```
